@@ -19,6 +19,7 @@ import godkr2 from './크레토스 문.webp'
 import godAtr1 from './아트레우스1.webp'
 import godAtr2 from './아트레우스2.webp'
 import pray from './프레이야.webp'
+import last from './라스트오브어스 로고.jpg'
 import joel from './joel.jpg'
 import ally from './ally.jpg'
 import tommy from './tommy.jpg'
@@ -188,14 +189,38 @@ function Nav() {
 
   /////////////
 
-  const[lastImg, setLastImg] = useState([
-    {src : joel },
-    {src : ally },
-    {src : tommy },
-    {src : tess }
-  ])
+  const [lastImg, setLastImg] = useState([
+  { src: joel, content: 'Card' },
+  { src: ally, content: 'Card' },
+  { src: tommy,content: 'Card' },
+  { src: tess, content: 'Card' }
+]);
+const [lastImg1, setLastImg1] = useState(0);
 
-  const[lastImg1, setLastImg1] = useState(0)
+
+
+useEffect(() => {
+  const handleScroll = () => {
+   const lastSection = document.querySelector('.last-card-warpper');
+   if(lastSection) {
+    const lastSectionTop = lastSection.getBoundingClientRect().top;
+    const windowHeight1 = window.innerHeight;
+    if(lastSectionTop < windowHeight1 /2) {
+      setLastImg1(false)
+    } else{
+      setLastImg1(true)
+    }
+   }
+  }
+
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
 
 
  ///////////////////////////////////////////////////////////////////////////
@@ -429,12 +454,12 @@ function Nav() {
       <div className='last-card-warpper'>
         {lastImg.map((item, index) => (
           <div className='last-card' key={index}>
-          <div className='card'>
-          <div className='front'>Card</div>
-          <div className='back'>
-            <img src={item.src} alt='image' />
-          </div>
-          </div>
+            <div className='card'>
+            <div className='front'></div>
+            <div className='back'>
+              <img src={item.src} alt='image' />
+            </div>
+            </div>
           </div>
         ))}
       </div>

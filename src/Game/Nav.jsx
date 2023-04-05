@@ -36,7 +36,7 @@ function Nav() {
     {url: video2, title: '2015', content: 'The Best Adventure Game '},
   ];
     
-  const [playIndex, setPlayIndex] = useState(0);
+  // const [playIndex, setPlayIndex] = useState(0);
 
   function handleProgress(progress) {
   const playedSeconds = progress.playedSeconds;

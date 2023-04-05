@@ -18,6 +18,11 @@ import godkr1 from './크레토스 방패.webp'
 import godkr2 from './크레토스 문.webp'
 import godAtr1 from './아트레우스1.webp'
 import godAtr2 from './아트레우스2.webp'
+import pray from './프레이야.webp'
+import joel from './joel.jpg'
+import ally from './ally.jpg'
+import tommy from './tommy.jpg'
+import tess from './tess.jpg'
 
 
 
@@ -36,7 +41,7 @@ function Nav() {
     {url: video2, title: '2015', content: 'The Best Adventure Game '},
   ];
     
-  // const [playIndex, setPlayIndex] = useState(0);
+  const [playIndex, setPlayIndex] = useState(0);
 
   function handleProgress(progress) {
   const playedSeconds = progress.playedSeconds;
@@ -105,12 +110,13 @@ function Nav() {
 
   const [godText, setGodText] = useState([
     {text: '크레토스', src: godKr, id:0, content: '스파르타의 전쟁의 신은 미드가르드에서 새로운 삶을 꾸렸습니다. 크레토스는 부성을 통해 새로운 목적을 찾았습니다. 라그나로크가 다가오며, 상황은 그 어느 때보다도 위험해졌습니다. 크레토스는 아들, 그리고 아들과 함께 만든 삶을 보호할지... 아니면 아홉 영역을 파멸적인 전쟁으로부터 수호할지 선택해야 합니다.'},
-    {text: '아트레우스', src: godAtr, id:1, content: '아트레우스는 크레토스와 거인 라우페이의 반신 아들인 십대 소년입니다. 그는 거인과 에시르 사이에서는 로키로 불립니다. 라그나로크가 다가오는 가운데, 아트레우스는 자신의 정체성을 탐구하고 더 잘 이해하며, 세상에서 자신의 위치를 찾고자 갈망합니다. 그는 아버지와 함께 맹훈련을 했습니다. 비록 그들의 관계는 여전히 견고하지만, 아트레우스는 자신만의 길을 찾고자 하는 마음이 간절합니다.'},
+    {text : '프레이야', src:pray, id:1, content : '프레이야는 바니르 여신, 발키리의 전 지도자, 오딘의 전처, 그리고 에시르의 전 여왕입니다. 사랑하지만 사이가 소원해진 아들 발두르의 죽음 이후, 프레이야는 크레토스와 아트레우스를 상대로 잔혹한 복수를 맹세했습니다.'},
+    {text: '아트레우스', src: godAtr, id:2, content: '아트레우스는 크레토스와 거인 라우페이의 반신 아들인 십대 소년입니다. 그는 거인과 에시르 사이에서는 로키로 불립니다. 라그나로크가 다가오는 가운데, 아트레우스는 자신의 정체성을 탐구하고 더 잘 이해하며, 세상에서 자신의 위치를 찾고자 갈망합니다. 그는 아버지와 함께 맹훈련을 했습니다. 비록 그들의 관계는 여전히 견고하지만, 아트레우스는 자신만의 길을 찾고자 하는 마음이 간절합니다.'},
   ]);
 
   const[currentGodIndex, setCurrentGodIndex] = useState(0);
   const [showImage, setShowImage] = useState(false)
-  // const [openDe, setOpenDe] = useState(true)
+  const [openDe, setOpenDe] = useState(true)
 
   const handleArrowClick = (direction) => {
     if(direction === 'left') {
@@ -128,14 +134,15 @@ function Nav() {
   useEffect(() => {
     const handleScroll = () => {
       const ganmeDetailSection = document.querySelector('.game-detail');
-      const gameDetailSectionTop = ganmeDetailSection.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if(gameDetailSectionTop < windowHeight / 2) {
-        setShowImage(true)
-      } else {
-        setShowImage(false)
-      }
+      if(ganmeDetailSection) {
+        const gameDetailSectionTop = ganmeDetailSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if(gameDetailSectionTop < windowHeight / 2) {
+          setShowImage(true)
+        } else {
+          setShowImage(false)
+        }
+       } 
       };
       window.addEventListener('scroll', handleScroll);
       return () => {
@@ -148,11 +155,12 @@ function Nav() {
   const [modalOpen, setModalOpen] =useState(false);
   const modalClose = () => {
     setModalOpen(false);
+    setOpenDe(true)
   }
 
   const openModal = () => {
     setModalOpen(true)
-    // setOpenDe(false)
+    setOpenDe(false)
   }
 
   const [personDetail, setPersonDetail] = useState([
@@ -177,6 +185,17 @@ function Nav() {
   
   const currentImage = personDetail[0];
   console.log(currentImage)
+
+  /////////////
+
+  const[lastImg, setLastImg] = useState([
+    {src : joel },
+    {src : ally },
+    {src : tommy },
+    {src : tess }
+  ])
+
+  const[lastImg1, setLastImg1] = useState(0)
 
 
  ///////////////////////////////////////////////////////////////////////////
@@ -328,32 +347,35 @@ function Nav() {
             </div>
           )}
         </section>
-        {/* {openDe && ( */}
-          <section className='game-detail'>
-          <div>
-            <h1 onClick={() => handleClick2()}>게임소개 세션</h1>
-          </div>
 
-          <div className='game-intr'>
-            <div className='game-bg'>
-            {showImage && (
-              <motion.div
-                key={currentGodIndex}
-                className='game-bg'
-                initial={{ opacity: 0, left: '-100%' }}
-                animate={{ opacity: 1, left: 0 }}
-                exit={{ opacity: 0, left: '100%' }}
-                transition={{ type: 'tween', duration: 1.5 }}
-              >
+
+        {openDe && (
+          <section className='game-detail'>
+            <div>
+              <h1 onClick={() => handleClick2()}>게임소개 세션</h1>
+            </div>
+
+            <div className='game-intr'>
+              <div className='game-bg'>
+                {showImage && (
+                 <motion.div
+                  key={currentGodIndex}
+                  className='game-bg'
+                  initial={{ opacity: 0, left: '-100%' }}
+                  animate={{ opacity: 1, left: 0 }}
+                  exit={{ opacity: 0, left: '100%' }}
+                  transition={{ type: 'tween', duration: 1.5 }}
+                >
                 <motion.img
                   className='kratos'
                   src={godText[currentGodIndex].src}
                   alt=''
+                  onClick={openModal}
                 />
-                <h1 className='game-txt' onClick={openModal}>{godText[currentGodIndex].text}</h1>
-                
-              </motion.div>
-            )}
+                <h1 className='game-txt'>{godText[currentGodIndex].text}</h1>
+                  
+                </motion.div>
+              )}
               <div className='game-pre' onClick={()=> handleArrowClick('left')}>
                 <FontAwesomeIcon icon={faArrowLeft}/>
               </div>
@@ -361,30 +383,63 @@ function Nav() {
               <div className='game-next' onClick={()=> handleArrowClick('right')}>
                 <FontAwesomeIcon icon={faArrowRight} />
               </div>
-            </div>
-          </div>
-        </section>
-        {/* )} */}
-        
-
-          {modalOpen && (
-            <section className='hide-game-detail'>
-              <div className='hide-game-wapper'>
-                 <img className='hide-game-img' src={godText[currentGodIndex].src} alt=""/>
-
-                <div className='hide-game-text'>
-                  <h1 className='text-main'>{godText[currentGodIndex].text}</h1>
-                   <FontAwesomeIcon className='faxMark' icon={faXmark} onClick={modalClose} />
-                  <p className='text-sub'>{godText[currentGodIndex].content}</p>
-                  <img key={personDetail[personDetail1].id}  src={personDetail[personDetail1].src} alt="" />
-                  <FontAwesomeIcon className='modal-icon' icon={faArrowLeft} onClick={() => handlePersonClick('left')} />
-                  <FontAwesomeIcon className='modal-icon1' icon={faArrowRight} onClick={() => handlePersonClick('right')} />
-
-                </div>
 
               </div>
-            </section>
-            )}
+            </div>
+          </section>
+        )}
+        
+
+        {modalOpen && (
+          <section className='hide-game-detail'>
+           <div className='hide-game-wapper'>
+            <img className='hide-game-img' src={godText[currentGodIndex].src} alt=""/>
+
+            <div className='hide-game-text'>
+              <h1 className='text-main'>{godText[currentGodIndex].text}</h1>
+              <FontAwesomeIcon className='faxMark' icon={faXmark} onClick={modalClose} />
+              <p className='text-sub'>{godText[currentGodIndex].content}</p>
+              <img key={personDetail[personDetail1].id}  src={personDetail[personDetail1].src} alt="" />
+              <FontAwesomeIcon className='modal-icon' icon={faArrowLeft} onClick={() => handlePersonClick('left')} />
+              <FontAwesomeIcon className='modal-icon1' icon={faArrowRight} onClick={() => handlePersonClick('right')} />
+
+            </div>
+
+            </div>
+          </section>
+        )}
+
+      <div className='last-of-us-warpper'>
+        <div className='last-bg'>
+
+          <p className='last-text'>
+            200개 이상의 GOTY 수상 이력을 자랑하는 The Last of Us에서 감성을 자극하는 스토리텔링과 인상적인 캐릭터를 만나세요.
+          </p>
+
+          <p className='last-text1'>
+            감염으로 잔혹해진 생존자로 가득 찬 황폐한 문명에서, 삶에 지친 주인공 조엘은 군사 격리 구역에서 14살 소녀 엘리를 몰래 빼내기 위해 고용됩니다. 그러나 사소한 일로 시작된 여정은 곧 국경을 넘나드는 잔인한 여정으로 변합니다.
+          </p>
+
+          <p className='last-text2'>
+            The Last of Us™의 싱글플레이 스토리 전체 및 엘리와 친구 라일리의 삶을 영원히 뒤바꾼 사건.
+          </p>
+
+        </div>
+
+      <div className='last-card-warpper'>
+        {lastImg.map((item, index) => (
+          <div className='last-card' key={index}>
+          <div className='card'>
+          <div className='front'>Card</div>
+          <div className='back'>
+            <img src={item.src} alt='image' />
+          </div>
+          </div>
+          </div>
+        ))}
+      </div>
+          
+      </div>
     </>
   )
 }

@@ -117,11 +117,13 @@
 
 .nav-list li:first-child {margin-left: 0;}
 
+/*******************************************************/
 
 .game-wrapper{
   display: flex;
   width: 100%;
   justify-content: space-between;
+  /* border: 1px solid black; */
 }
 
 .game-wrapper button {
@@ -263,7 +265,9 @@
   border: 5px solid transparent;
 }
 
-.hide-img:hover {box-shadow: 0 0 0 3px #0070D1;}
+.hide-img:hover {
+  box-shadow: 0 0 0 3px #0070D1;
+}
 
 .hide-pre{
   margin-left: 40px;
@@ -272,21 +276,24 @@
   border: 5px solid transparent;
   border-radius: 50%;
   background-color: transparent;
+  transition: all 400ms ease-in-out;
 }
-.hide-pre:hover {
+.hide-pre:hover,
+.hide-nex:hover {
   background-color: #000;
   color: #fff;
-  padding: 10px;
 }
 
 .hide-nex{ 
   cursor: pointer;
   margin-right: 40px;
   font-size: 25px;
-  border: none;
+  border: 5px solid transparent;
   border-radius: 50%;
   background-color: transparent;
+  transition: all 400ms ease-in-out;
 }
+
 
 .game-intr{
   width: 100%;
@@ -308,7 +315,6 @@
 .kratos{
   width: 30%;
   height: 80%;
-  /* animation: fadeInRight 1.5s; */
 }
 
 
@@ -354,14 +360,13 @@
 
 .hide-game-wapper{
   width: 100%;
-  height: 800px;
+  height: 900px;
   background-image: url(./백그라운드.webp);
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: center;
-  /* display: none; */
 }
 
 .hide-game-img{
@@ -440,4 +445,100 @@
 .modal-icon1:hover {
   background-color: #000;
   color: #fff;
+}
+
+.last-bg{
+  position: relative;
+  width: 100%;
+  height: 700px;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ), url(./라스트오브어스\ 백그라운드.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+.last-bg img {
+  width: 100%;
+  height: 500px;
+}
+.last-text{
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  width: 40%;
+  font-style: italic;
+  color: #fff;
+  font-size: 18px;
+}
+
+.last-text1{
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  width: 40%;
+  color: #fff;
+  font-size: 18px;
+}
+
+.last-text2{
+  position: absolute;
+  top: 60%;
+  right: 5%;
+  width: 40%;
+  color: #fff;
+  font-size: 18px;
+}
+
+.last-card-warpper{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.last-card{
+  width: 200px;
+  height: 250px;
+  perspective: 1100px;
+  margin: 0 50px 50px 50px;
+}
+
+.card{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: .8s;
+  transform-style: preserve-3d;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: none;
+  border-radius: 15px;
+}
+
+.front {background: #0070D1; 
+}
+
+.back {transform: rotateY(180deg);}
+
+.back img{
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+}
+
+.last-card:hover .card {transform: rotateY(180deg) scale(1.4);}
+
+.front{
+  line-height: 250px;
+  color: #fff;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 40px;
 }

@@ -110,7 +110,7 @@ function Nav() {
 
   const[currentGodIndex, setCurrentGodIndex] = useState(0);
   const [showImage, setShowImage] = useState(false)
-  const [openDe, setOpenDe] = useState(true)
+  // const [openDe, setOpenDe] = useState(true)
 
   const handleArrowClick = (direction) => {
     if(direction === 'left') {
@@ -152,7 +152,7 @@ function Nav() {
 
   const openModal = () => {
     setModalOpen(true)
-    setOpenDe(false)
+    // setOpenDe(false)
   }
 
   const [personDetail, setPersonDetail] = useState([
@@ -328,7 +328,7 @@ function Nav() {
             </div>
           )}
         </section>
-        {openDe && (
+        {/* {openDe && ( */}
           <section className='game-detail'>
           <div>
             <h1 onClick={() => handleClick2()}>게임소개 세션</h1>
@@ -364,7 +364,7 @@ function Nav() {
             </div>
           </div>
         </section>
-        )}
+        {/* )} */}
         
 
           {modalOpen && (

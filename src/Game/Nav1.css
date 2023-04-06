@@ -194,7 +194,6 @@
   background: #232526;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /* animation: fadeInUp 1s; */
 }
 
 .react-player video {
@@ -203,7 +202,7 @@
 @keyframes fadeInRight {
   0% {
       opacity: 0;
-      transform: translate3d(100%, 0, 0);
+      transform: translate3d(50%, 0, 0);
   }
   to {
       opacity: 1;

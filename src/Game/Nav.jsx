@@ -222,91 +222,8 @@ useEffect(() => {
 }, []);
 
 
-
- ///////////////////////////////////////////////////////////////////////////
-
-  //navbar 스크롤이벤트 후 + useCallback 훅으로 지속된 실행을 방지함
-  const handleScroll = useCallback(() => {
-    console.log(window.scrollY);
-    (window.scrollY > 45 && navChange == false) ? (
-      console.log('성공'),
-      setNavChange(true),
-      console.log(navChange)
-    ) : (window.scrollY < 45 && navChange == true) ? (
-      console.log('성공'),
-      setNavChange(false),
-      console.log(navChange)
-    ) : null
-  }, [navChange]);
-  
-
-  // 미리 실행 할 스크롤 이벤트ㅇ;ㅣㅁ
-  useEffect(() => {
-    let handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll); 
-    };
-  }, [handleScroll]);
-
-  // 반응형 NavBgi 이미지 개수 변경을 위한 후크임
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  // 웹 렌더링 후 Navbar가 나타나는 애니메이션 효과를 위한 setTimeout 장치임
-  useEffect(() => {
-    let timeoutNav = setTimeout(() => {
-      setShowNavbar(true);
-    }, 1000);
-
-    return () => {
-      clearTimeout(timeoutNav);
-    };
-  }, []);
-
-  // 반응형 width 사이즈 제한 ( 후에 여러가지 크기를 가진 모바일 기기를 위해 수정이나 추가할 수 있음 )
-  const isMobile = windowWidth <= 768;
-
   return (
     <>
-      <section className='global-header'>
-        <div className={`header-bg f-img ${ isMobile ? 'on' : '' }`}></div>
-        <div className={`header-bg s-img ${ isMobile ? 'next-img' : '' }`}></div>
-        <div className={`header-bg t-img ${ isMobile ? 'on' : '' }`}></div>
-      </section>
-      
-      <nav className={`global-nav ${ navChange || isMobile ? 'on' : '' } ${ showNavbar ? 'show' : '' }`}>
-          <ul className={`nav-list ${ showNavbar ? 'show' : '' }`}>
-            <li>Menu</li>
-            <li>Menu</li>
-            <li>Menu</li>
-          </ul>
-          <h1 className='react-logo'>
-            {
-              !isMobile ? (
-               <img className={`${ showNavbar ? 'show' : '' }`} src={!navChange ? process.env.PUBLIC_URL + 'project/public/teamLogoBlack.png' : process.env.PUBLIC_URL + 'imgSbk930123/teamLogoWhite.png'}></img>
-              ) : null
-            }
-            
-          </h1>
-          <ul className={`nav-list nav-op ${ showNavbar ? 'show' : '' }`}>
-            {/* <li>menu</li> */}
-            <li>Menu</li>
-            <li>Menu</li>
-            {/* <li><FontAwesomeIcon icon={faUserPlus} /></li> */}
-          </ul>
-        </nav>
-{/*/////////////////////////////////////////////////////////////////////////////////////////*/}   
-
         <section className='game-ck'>
           {!showVideo ? (
             <div className='game-wrapper'>
@@ -434,37 +351,37 @@ useEffect(() => {
           </section>
         )}
 
-      <div className='last-of-us-warpper'>
-        <div className='last-bg'>
+        <div className='last-of-us-warpper'>
+          <div className='last-bg'>
 
-          <p className='last-text'>
-            200개 이상의 GOTY 수상 이력을 자랑하는 The Last of Us에서 감성을 자극하는 스토리텔링과 인상적인 캐릭터를 만나세요.
-          </p>
+            <p className='last-text'>
+              200개 이상의 GOTY 수상 이력을 자랑하는 The Last of Us에서 감성을 자극하는 스토리텔링과 인상적인 캐릭터를 만나세요.
+            </p>
 
-          <p className='last-text1'>
-            감염으로 잔혹해진 생존자로 가득 찬 황폐한 문명에서, 삶에 지친 주인공 조엘은 군사 격리 구역에서 14살 소녀 엘리를 몰래 빼내기 위해 고용됩니다. 그러나 사소한 일로 시작된 여정은 곧 국경을 넘나드는 잔인한 여정으로 변합니다.
-          </p>
+            <p className='last-text1'>
+              감염으로 잔혹해진 생존자로 가득 찬 황폐한 문명에서, 삶에 지친 주인공 조엘은 군사 격리 구역에서 14살 소녀 엘리를 몰래 빼내기 위해 고용됩니다. 그러나 사소한 일로 시작된 여정은 곧 국경을 넘나드는 잔인한 여정으로 변합니다.
+            </p>
 
-          <p className='last-text2'>
-            The Last of Us™의 싱글플레이 스토리 전체 및 엘리와 친구 라일리의 삶을 영원히 뒤바꾼 사건.
-          </p>
+            <p className='last-text2'>
+              The Last of Us™의 싱글플레이 스토리 전체 및 엘리와 친구 라일리의 삶을 영원히 뒤바꾼 사건.
+            </p>
 
-        </div>
-
-      <div className='last-card-warpper'>
-        {lastImg.map((item, index) => (
-          <div className='last-card' key={index}>
-            <div className='card'>
-            <div className='front'></div>
-            <div className='back'>
-              <img src={item.src} alt='image' />
-            </div>
-            </div>
           </div>
-        ))}
-      </div>
-          
-      </div>
+
+        <div className='last-card-warpper'>
+          {lastImg.map((item, index) => (
+            <div className='last-card' key={index}>
+              <div className='card'>
+              <div className='front'></div>
+              <div className='back'>
+                <img src={item.src} alt='image' />
+              </div>
+              </div>
+            </div>
+          ))}
+        </div>
+            
+        </div>
     </>
   )
 }

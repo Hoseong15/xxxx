@@ -29,12 +29,6 @@ import tommy from './tommy1.jpg'
 
 function Nav() {
 
-  let [navChange, setNavChange] = useState(false);
-  let [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [showNavbar, setShowNavbar] = useState(false);
-//////////////////////////////////////////////////////////////////////
- 
-
   const [showVideo, setShowVideo] = useState(false);
   const videos = [
     {url: video, title: "2022", content: ' Playstation Essential Game'},

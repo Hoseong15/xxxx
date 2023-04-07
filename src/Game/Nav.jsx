@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft, faXmark, faL } from '@fortawesome/free-solid-svg-icons';
 import { useRef, useEffect } from 'react';
 import ReactPlayer from 'react-player';
-import { motion } from 'framer-motion';
+import { delay, motion } from 'framer-motion';
 import Nav1 from './Nav1.css'
 import img from './갓오브워 라그나로크.jpg'
 import img1 from './라스트오브어스.jpg'
@@ -16,14 +16,14 @@ import godAtr from './section5a-characters-atreus.webp'
 import godKr from './section5a-characters-kratos.webp'
 import godkr1 from './크레토스 방패.webp'
 import godkr2 from './크레토스 문.webp'
-import godAtr1 from './아트레우스1.webp'
+import godAtr1 from './아트레우스1.webp' 
 import godAtr2 from './아트레우스2.webp'
 import pray from './프레이야.webp'
-import last from './라스트오브어스 로고.jpg'
+import meta from './last of us meta.png'
 import joel from './joel.jpg'
 import ally from './ally.jpg'
-import tommy from './tommy.jpg'
-import tess from './tess.jpg'
+import tommy from './tommy1.jpg'
+
 
 
 
@@ -38,7 +38,7 @@ function Nav() {
   const [showVideo, setShowVideo] = useState(false);
   const videos = [
     {url: video, title: "2022", content: ' Playstation Essential Game'},
-    {url: video1, title: '2020', content: '21C  GOTY - THE LAST OF US ' },
+    {url: video1, title: '2014', content: '21C  GOTY - THE LAST OF US ' },
     {url: video2, title: '2015', content: 'The Best Adventure Game '},
   ];
     
@@ -67,7 +67,7 @@ function Nav() {
     setPlayIndex(index);
   }
   function handleClick1(index) {setPlayIndex(index);}
-  function handleClick2() {setShowVideo(!showVideo);}
+  function handleClick2() {setShowVideo(false);}
 
   
 
@@ -86,7 +86,7 @@ function Nav() {
 
     
   const [imageList, setImageList] = useState([
-    { src: img, alt: '갓 오브 워 라그나로크', id: 0 },
+    { src: img, alt: '갓 오브 워 라그나로크', id: 0},
     { src: img1, alt: '라스트 오브 어스', id: 1 },
     { src: img2, alt: '언챠티드', id: 2 },
   ]);
@@ -189,37 +189,15 @@ function Nav() {
 
   /////////////
 
-  const [lastImg, setLastImg] = useState([
-  { src: joel, content: 'Card' },
-  { src: ally, content: 'Card' },
-  { src: tommy,content: 'Card' },
-  { src: tess, content: 'Card' }
+const [lastImg, setLastImg] = useState([
+  { src: meta, content: ''},
+  { src: joel, id:0,  content: '조엘과 엘리가 이어가는 우정에 있습니다. 이것은 사랑, 충실함, 그리고 구원의 이야기' },
+  { src: ally, id:0, content: '' },
+  { src: tommy,id:0, content: '' },  
 ]);
-const [lastImg1, setLastImg1] = useState(0);
+const [lastImg1, setLastImg1] = useState(false);
 
-
-
-useEffect(() => {
-  const handleScroll = () => {
-   const lastSection = document.querySelector('.last-card-warpper');
-   if(lastSection) {
-    const lastSectionTop = lastSection.getBoundingClientRect().top;
-    const windowHeight1 = window.innerHeight;
-    if(lastSectionTop < windowHeight1 /2) {
-      setLastImg1(false)
-    } else{
-      setLastImg1(true)
-    }
-   }
-  }
-
-
-  window.addEventListener('scroll', handleScroll);
-
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
-  };
-}, []);
+////////////////////////////////////////////////////////////////////
 
 
   return (
@@ -292,11 +270,7 @@ useEffect(() => {
 
 
         {openDe && (
-          <section className='game-detail'>
-            <div>
-              <h1 onClick={() => handleClick2()}>게임소개 세션</h1>
-            </div>
-
+          <section className='game-detail'  onClick={() => handleClick2()}>
             <div className='game-intr'>
               <div className='game-bg'>
                 {showImage && (
@@ -354,27 +328,32 @@ useEffect(() => {
         <div className='last-of-us-warpper'>
           <div className='last-bg'>
 
-            <p className='last-text'>
-              200개 이상의 GOTY 수상 이력을 자랑하는 The Last of Us에서 감성을 자극하는 스토리텔링과 인상적인 캐릭터를 만나세요.
-            </p>
+            <h1 className='last-text'>
+            
+            </h1>
 
             <p className='last-text1'>
-              감염으로 잔혹해진 생존자로 가득 찬 황폐한 문명에서, 삶에 지친 주인공 조엘은 군사 격리 구역에서 14살 소녀 엘리를 몰래 빼내기 위해 고용됩니다. 그러나 사소한 일로 시작된 여정은 곧 국경을 넘나드는 잔인한 여정으로 변합니다.
+            200개 이상의 GOTY 수상 이력을 자랑하는 The Last of Us에서 감성을 자극하는 스토리텔링과 인상적인 캐릭터를 만나세요.
             </p>
 
             <p className='last-text2'>
-              The Last of Us™의 싱글플레이 스토리 전체 및 엘리와 친구 라일리의 삶을 영원히 뒤바꾼 사건.
+            기존 문명을 극단적으로 뒤튼 전염병으로부터 20년이 흐른 현재, 전염병에 감염된 인간들은 날뛰고 생존자들은 식량이나 무기, 물자를 차지하기 위해 서로를 죽이고 있습니다. 척박한 현실 속에서 살아남은 생존자 조엘은 14세 소녀인 엘리를 보안이 철저한 군 격리 지역으로부터 탈출시키는 의뢰를 받지만, 처음에 간단할 거라 생각한 이 의뢰는 곧 미국을 가로지르는 잔혹한 여정으로 바뀝니다.
+            </p>
+
+            <p className='last-text3'>
+            5년 후, 조엘과 엘리는 와이오밍주 잭슨에 정착했습니다. 지역 사회를 뒤흔드는 비참한 사건이 일어난 후, 엘리는 정의와 마무리를 실현하기 위해 혹독한 여정의 길에 오릅니다. 그녀는 길에서 조우하는 위험뿐 아니라, 스스로의 결정에 대한 책임 역시 엘리가 맞서 싸워야 할 장애물입니다.
             </p>
 
           </div>
-
+          
         <div className='last-card-warpper'>
           {lastImg.map((item, index) => (
             <div className='last-card' key={index}>
               <div className='card'>
               <div className='front'></div>
-              <div className='back'>
+              <div className={`back ${item.id === 0 ? 'opacity7' : ''}`}>
                 <img src={item.src} alt='image' />
+                <p>{item.content}</p>
               </div>
               </div>
             </div>

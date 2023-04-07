@@ -24,6 +24,7 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 180px;
 }
 
 .game-img{
@@ -184,7 +185,8 @@
 
 .game-bg{
   width: 100%;
-  height: 800px;
+  height: 900px;
+  margin-top: 50px;
   background-image: url(./백그라운드.webp);
   background-position: center center;
   background-repeat: no-repeat;
@@ -242,7 +244,7 @@
 
 .hide-game-wapper{
   width: 100%;
-  height: 900px;
+  height: 950px;
   background-image: url(./백그라운드.webp);
   background-position: center;
   background-repeat: no-repeat;
@@ -332,11 +334,12 @@
 .last-bg{
   position: relative;
   width: 100%;
-  height: 700px;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ), url(./라스트오브어스\ 백그라운드.jpg);
+  height: 900px;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ), url(./라스트오브어스\ 디테일\ 백그라운드.webp);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100%;
+  /* margin-top: 100px; */
 
 }
 .last-bg img {
@@ -345,38 +348,60 @@
 }
 .last-text{
   position: absolute;
-  top: 25%;
-  right: 5%;
+  top: 35%;
+  left: 5%;
+  width: 40%;
+  height: 150px;
+  color: #fff;
+  font-size: 30px;
+  background-image: url(./라스트오브어스\ 어워드.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+
+.last-text1{
+  position: absolute;
+  top: 50%;
+  left: 5%;
   width: 40%;
   font-style: italic;
   color: #fff;
   font-size: 18px;
 }
 
-.last-text1{
-  position: absolute;
-  top: 40%;
-  right: 5%;
-  width: 40%;
-  color: #fff;
-  font-size: 18px;
-}
-
 .last-text2{
   position: absolute;
-  top: 60%;
-  right: 5%;
+  top: 59%;
+  left: 5%;
   width: 40%;
   color: #fff;
   font-size: 18px;
+  font-style: italic;
+
+}
+
+.last-text3{
+  position: absolute;
+  top: 75%;
+  left: 5%;
+  width: 40%;
+  color: #fff;
+  font-size: 18px;
+  font-style: italic;
 }
 
 .last-card-warpper{
   display: flex;
   width: 100%;
+  height: 600px;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  /* margin-top: 100px; */
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ), url(./라스트오브어스\ 카드\ 백.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 
 .last-card{
@@ -410,13 +435,28 @@
   background-size: cover;
 }
 
-.back {transform: rotateY(180deg);}
+.back {
+  transform: rotateY(180deg);
+}
 
 .back img{
   width: 100%;
   height: 100%;
   border: none;
   border-radius: 15px;
+  /* opacity: .7; */
+}
+
+.back p {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  width: 100%;
+  color: #fff;
+  z-index: 1;
+  opacity: 1;
+  font-weight: 700;
 }
 
 .last-card:hover .card {transform: rotateY(180deg) scale(1.4);}
@@ -427,4 +467,8 @@
   font-weight: 700;
   font-style: italic;
   font-size: 40px;
+}
+
+.opacity7 {
+  opacity: 0.7;
 }

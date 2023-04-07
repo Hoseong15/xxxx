@@ -5,6 +5,7 @@ import { faArrowRight, faArrowLeft, faXmark, faL } from '@fortawesome/free-solid
 import { useRef, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import { delay, motion } from 'framer-motion';
+import { useSpring } from 'react-spring';
 import Nav1 from './Nav1.css'
 import img from './갓오브워 라그나로크.jpg'
 import img1 from './라스트오브어스.jpg'
@@ -23,8 +24,6 @@ import meta from './last of us meta.png'
 import joel from './joel.jpg'
 import ally from './ally.jpg'
 import tommy from './tommy1.jpg'
-
-
 
 
 function Nav() {
@@ -62,6 +61,8 @@ function Nav() {
   }
   function handleClick1(index) {setPlayIndex(index);}
   function handleClick2() {setShowVideo(false);}
+
+
 
   
 
@@ -215,6 +216,8 @@ const [lastImg1, setLastImg1] = useState(false);
                   />
                 ))}
               </div>
+
+           
 
               <div className='icon-wrapper'>
                 <button onClick={() => handleIconClick('next')}>

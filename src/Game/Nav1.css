@@ -5,7 +5,7 @@
 .game-wrapper{
   display: flex;
   width: 100%;
-  height: 800px;
+  height: 1200px;
   justify-content: space-between;
   /* border: 1px solid black; */
   /* background-image: url();
@@ -191,7 +191,7 @@
 
 .game-bg{
   width: 100%;
-  height: 900px;
+  height: 950px;
   margin-top: 50px;
   background-image: url(./백그라운드.webp);
   background-position: center center;
@@ -483,4 +483,70 @@
 
 .opacity7 {
   opacity: 0.7;
+}
+
+.unch-main{
+  position: relative;
+  width: 100%;
+  height: 800px;
+  background-image: url(./uncharted-hub-hero-banner-desktop-04-en-30jun21.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+
+.unch-text{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%,-90%);
+  width: 50%;
+  height: 300px;
+  background-image: url(./언챠티드\ 글.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.unch-bg{
+  width: 100%;
+  height: 700px;
+  background-image: url(./언챠.webp);
+  margin-top: -110px;
+}
+
+.unch-series-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.unch-item {
+  position: relative;
+  width: 25%;
+  height: 550px;
+  padding: 10px;
+  margin: 50px;
+  background-color:  #1F1F1F;
+  color: #fff;
+}
+
+.unch-item img {
+  width: 100%;
+  background-size: contain;
+}
+
+.unch-btn{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.unch-btn:hover{
+  border: 3px solid #000;
+  box-shadow: 0 0 0 3px #fff;
 }

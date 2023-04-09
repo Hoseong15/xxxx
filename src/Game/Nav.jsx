@@ -24,7 +24,12 @@ import meta from './last of us meta.png'
 import joel from './joel.jpg'
 import ally from './ally.jpg'
 import tommy from './tommy1.jpg'
-
+import unchback from './언챠티드 백그라운드.webp'
+import unchtext from './언챠티드 글.webp'
+import ungame1 from './언챠게임0.webp'
+import ungame2 from './언챠게임1.webp'
+import ungame3 from './언챠게임2.webp'
+import ungame4 from './언챠게임3.webp'
 
 function Nav() {
 
@@ -192,6 +197,14 @@ const [lastImg, setLastImg] = useState([
 ]);
 const [lastImg1, setLastImg1] = useState(false);
 
+const [uncharted, setUncharted] = useState([
+  {src :ungame1 , content:'UNCHARTED™: 레거시 오브 시브즈 컬렉션', content1 :'네이선 드레이크와 클로레 프레이저의 스탠드얼론 작품을 플레이하며 그들이 과거를 마주하고 자신의 유산을 만들어 가는 것을 확인하세요. UNCHARTED™: 레거시 오브 시브즈 컬렉션에는 많은 호평을 받은 UNCHARTED 4: 해적왕과 최후의 보물, UNCHARTED: 잃어버린 유산의 싱글플레이 탐험이 PS5용으로 리마스터되어 포함되었습니다.'},
+  {src :ungame2 , content:'UNCHARTED: 잃어버린 유산', content1: '전설적인 유물이 무자비한 전쟁광의 손에 들어가지 못하도록 막기 위해, 경험 많은 모험가 클로에 프레이저는 유명한 용병인 나딘 로스에게 도움을 요청합니다. 유물을 되찾기 위해 둘은 가네쉬의 황금 상아가 있는 인도의 서고츠 산맥으로 모험을 떠나야 합니다. 클로에의 극적인 여정에서 그녀는 자신의 과거를 마주하고 스스로의 유산을 만들기 위해 어디까지 희생할 수 있는지 결정해야 합니다.'},
+  {src :ungame3 , content:'UNCHARTED 4: 해적왕과 최후의 보물', content1:'저번 무모한 모험 이후로 3년이 지난 현재, 네이선 드레이크는 세계 탐험을 그만 뒀지만 여전히 모험을 향한 거부하기 힘든 유혹을 느낍니다. 그의 형 샘 드레이크가 결코 잊을 수 없는 경험과 아직 발견되지 않은 보물을 약속하며 찾아오자, 네이선은 금방 짐을 싸고 리버탈리아의 해적 유토피아를 향해 모험을 떠날 준비를 합니다.'},
+  {src :ungame4 , content:'UNCHARTED: The Nathan Drake Collection™', content1:'Naughty Dog의 획기적인 팀이 제작한 네이선 드레이크의 수수한 시작부터 비범한 발견까지, 전 세계를 배경으로 한 위기로 가득한 여정을 경험해 보세요. 네이선이 무자비한 적을 상대로 상상조차 못할 보물을 위해 목숨을 걸고 경쟁을 벌이며 만나는 개성 가득한 여러 명의 캐릭터를 만나보세요.'},
+])
+
+
 ////////////////////////////////////////////////////////////////////
 
 
@@ -349,12 +362,44 @@ const [lastImg1, setLastImg1] = useState(false);
               <div className='card'>
               <div className='front'></div>
               <div className={`back ${item.id === 0 ? 'opacity7' : ''}`}>
-                <img src={item.src} alt='image' />
+                <img src={item.src} alt='unimage' />
                 <p>{item.content}</p>
               </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className='uncharted'>
+          <div className='unch-main'>
+            <div className='unch-text'></div>
+          </div>
+
+          <div className='unch-bg'>
+            
+            <h1 className='unch-bgtext'>
+              UNCHARTED 게임
+            </h1>
+
+            <div className='unch-bg-series'>
+              UNCHARTED 시리즈
+
+              <div className='unch-series-list'>
+                <div className='unch-series-item'>
+                  {uncharted.map((item, index) => (
+                    <div className='unch-item' key={index}>
+                     <img src={item.src} alt="" />
+                     <h4>{item.content}</h4>
+                     <p>{item.content1}</p>
+                     <button className='unch-btn'>자세히 보기</button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+            </div>
+
+          </div>
         </div>
             
         </div>

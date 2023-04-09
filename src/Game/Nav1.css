@@ -493,6 +493,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size:contain;
+  /* margin-top: -84px; */
 }
 
 .unch-text{
@@ -549,4 +550,66 @@
 .unch-btn:hover{
   border: 3px solid #000;
   box-shadow: 0 0 0 3px #fff;
+}
+
+
+.unch-video{
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.video1 {
+ opacity: .9;
+}
+
+.unicon{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  color: #fff;
+  background-color: #aaa;
+  opacity: .7;
+}
+
+.The-Lost-Legacy{
+  display: flex;
+  flex-direction: column;
+  width: 50%
+}
+
+
+.The-Lost-Legacy img{
+  width: 45%;
+  height: 100%;
+  margin: 0 10px 0 40px;
+}
+
+.The-Lost-Legacy-text{
+  display: flex;
+  align-items: center;
+}
+.text-span{
+  font-weight: 700;
+}
+
+.dsdsdsd{
+  margin-top: 20px;
+  margin-left: 40px;
+  display: flex;
+  width: 100%
+}
+
+.ds-text{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.dsdsdsd img{
+  width: 50%;
+  height: 100%;
 }

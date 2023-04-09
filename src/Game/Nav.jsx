@@ -5,7 +5,6 @@ import { faArrowRight, faArrowLeft, faXmark, faL } from '@fortawesome/free-solid
 import { useRef, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import { delay, motion } from 'framer-motion';
-import { useSpring } from 'react-spring';
 import Nav1 from './Nav1.css'
 import img from './갓오브워 라그나로크.jpg'
 import img1 from './라스트오브어스.jpg'
@@ -24,12 +23,15 @@ import meta from './last of us meta.png'
 import joel from './joel.jpg'
 import ally from './ally.jpg'
 import tommy from './tommy1.jpg'
-import unchback from './언챠티드 백그라운드.webp'
-import unchtext from './언챠티드 글.webp'
 import ungame1 from './언챠게임0.webp'
 import ungame2 from './언챠게임1.webp'
 import ungame3 from './언챠게임2.webp'
 import ungame4 from './언챠게임3.webp'
+import unchvideo from './언차티드영상.mp4'
+import unchvideo1 from './언챠티드영상1.mp4'
+import unpeole from './나타.webp'
+import unpeole1 from './짭.webp'
+import unpeole2 from './네이션.webp'
 
 function Nav() {
 
@@ -185,7 +187,6 @@ function Nav() {
   };
   
   const currentImage = personDetail[0];
-  console.log(currentImage)
 
   /////////////
 
@@ -197,12 +198,52 @@ const [lastImg, setLastImg] = useState([
 ]);
 const [lastImg1, setLastImg1] = useState(false);
 
+
 const [uncharted, setUncharted] = useState([
-  {src :ungame1 , content:'UNCHARTED™: 레거시 오브 시브즈 컬렉션', content1 :'네이선 드레이크와 클로레 프레이저의 스탠드얼론 작품을 플레이하며 그들이 과거를 마주하고 자신의 유산을 만들어 가는 것을 확인하세요. UNCHARTED™: 레거시 오브 시브즈 컬렉션에는 많은 호평을 받은 UNCHARTED 4: 해적왕과 최후의 보물, UNCHARTED: 잃어버린 유산의 싱글플레이 탐험이 PS5용으로 리마스터되어 포함되었습니다.'},
-  {src :ungame2 , content:'UNCHARTED: 잃어버린 유산', content1: '전설적인 유물이 무자비한 전쟁광의 손에 들어가지 못하도록 막기 위해, 경험 많은 모험가 클로에 프레이저는 유명한 용병인 나딘 로스에게 도움을 요청합니다. 유물을 되찾기 위해 둘은 가네쉬의 황금 상아가 있는 인도의 서고츠 산맥으로 모험을 떠나야 합니다. 클로에의 극적인 여정에서 그녀는 자신의 과거를 마주하고 스스로의 유산을 만들기 위해 어디까지 희생할 수 있는지 결정해야 합니다.'},
-  {src :ungame3 , content:'UNCHARTED 4: 해적왕과 최후의 보물', content1:'저번 무모한 모험 이후로 3년이 지난 현재, 네이선 드레이크는 세계 탐험을 그만 뒀지만 여전히 모험을 향한 거부하기 힘든 유혹을 느낍니다. 그의 형 샘 드레이크가 결코 잊을 수 없는 경험과 아직 발견되지 않은 보물을 약속하며 찾아오자, 네이선은 금방 짐을 싸고 리버탈리아의 해적 유토피아를 향해 모험을 떠날 준비를 합니다.'},
-  {src :ungame4 , content:'UNCHARTED: The Nathan Drake Collection™', content1:'Naughty Dog의 획기적인 팀이 제작한 네이선 드레이크의 수수한 시작부터 비범한 발견까지, 전 세계를 배경으로 한 위기로 가득한 여정을 경험해 보세요. 네이선이 무자비한 적을 상대로 상상조차 못할 보물을 위해 목숨을 걸고 경쟁을 벌이며 만나는 개성 가득한 여러 명의 캐릭터를 만나보세요.'},
+  {src :ungame2 , id:1, content:'UNCHARTED: 잃어버린 유산', content1: '전설적인 유물이 무자비한 전쟁광의 손에 들어가지 못하도록 막기 위해, 경험 많은 모험가 클로에 프레이저는 유명한 용병인 나딘 로스에게 도움을 요청합니다. 유물을 되찾기 위해 둘은 가네쉬의 황금 상아가 있는 인도의 서고츠 산맥으로 모험을 떠나야 합니다. 클로에의 극적인 여정에서 그녀는 자신의 과거를 마주하고 스스로의 유산을 만들기 위해 어디까지 희생할 수 있는지 결정해야 합니다.'},
+  {src :ungame3 , id:2, content:'UNCHARTED 4: 해적왕과 최후의 보물', content1:'저번 무모한 모험 이후로 3년이 지난 현재, 네이선 드레이크는 세계 탐험을 그만 뒀지만 여전히 모험을 향한 거부하기 힘든 유혹을 느낍니다. 그의 형 샘 드레이크가 결코 잊을 수 없는 경험과 아직 발견되지 않은 보물을 약속하며 찾아오자, 네이선은 금방 짐을 싸고 리버탈리아의 해적 유토피아를 향해 모험을 떠날 준비를 합니다.'},
+  {src :ungame4 , id:3, content:'UNCHARTED: The Nathan Drake Collection™', content1:'Naughty Dog의 획기적인 팀이 제작한 네이선 드레이크의 수수한 시작부터 비범한 발견까지, 전 세계를 배경으로 한 위기로 가득한 여정을 경험해 보세요. 네이선이 무자비한 적을 상대로 상상조차 못할 보물을 위해 목숨을 걸고 경쟁을 벌이며 만나는 개성 가득한 여러 명의 캐릭터를 만나보세요.'},
 ])
+
+const [unchVideo, setUnchvideo] = useState();
+
+
+const [unvideos, setUnVideds] = useState([
+  {
+    url: unchvideo, 
+    id:1,
+    content2:'클로에 프레이저',
+    content3:' - UNCHARTED 2: 황금도와 사라진 함대',
+    content4:' - UNCHARTED 3: 황금 사막의 아틀란티스',
+    content5:'시리즈에서 가장 인기 많은 캐릭터 중 하나인 클로에는 네이선 드레이크와 비견되는 대응 능력, 고고학 지식, 그리고 즉흥적인 성격을 가진 악명 높은 보물 사냥꾼입니다. 그녀는 전투와 운전 실력이 둘 다 뛰어난 것으로 유명합니다.',
+    content6:'클로에는 충동적이고 즉흥적이며, 기지를 최대로 발휘합니다. 그녀의 방식은 종종 도덕적인 선을 흐리지만 항상 결과를 내기 때문에 그녀를 찾는 이가 많습니다. 하지만 그녀에게도 한계는 있으며, 예상 밖의 상황이 펼쳐지면 주저하지 않고 피해를 막습니다.',
+    content7: '나딘 로스',
+    content8: 'UNCHARTED 4: 해적왕과 최후의 보물',
+    content9: '시리즈에서 등장한 지 얼마 되지 않았지만, 금세 그녀만의 팬층을 확보한 캐릭터입니다. 나딘은 무기를 다루는 전문가로, 그녀의 부하들이 운영하는 군사 회사인 쉐도우 마트에서 일합니다. 나딘은 매우 뛰어난 전투 능력과 지적 수완을 지니고 있으며, 항상 일관성 있는 인물로 그녀의 행동이 항상 목적에 맞게 이루어집니다.'
+    },
+    
+    {
+     id:2, 
+     url: unchvideo1, 
+     
+    },
+])
+
+const [unchModalOpen, setUnchModalOpen] = useState({});
+const [playIndex1, setPlayIndex1] = useState(0);
+
+const unOpenModal = (id) => {
+  setUnchvideo(unvideos.find(unvideos => unvideos.id === id)?.url);
+  setPlayIndex1(id - 1);
+  setUnchModalOpen(true);
+};
+
+
+const unModalClose = () => {
+  setUnchvideo('');
+  setPlayIndex1(0);
+  setUnchModalOpen(false);
+};
 
 
 ////////////////////////////////////////////////////////////////////
@@ -391,16 +432,91 @@ const [uncharted, setUncharted] = useState([
                      <img src={item.src} alt="" />
                      <h4>{item.content}</h4>
                      <p>{item.content1}</p>
-                     <button className='unch-btn'>자세히 보기</button>
+                     <button className='unch-btn' onClick={() => unOpenModal(item.id)}>자세히 보기</button>
+
                     </div>
                   ))}
                 </div>
               </div>
-              
             </div>
-
           </div>
         </div>
+
+        {unchModalOpen && (
+          <div className='uncharted-collection'>
+            {unvideos.map((video, index) => (
+              <div key={index} onClick={() => unOpenModal(video.id)}>
+              </div>
+            ))}
+            {unchVideo && (
+              <div className='unch-video'>
+                <ReactPlayer
+                  className='video1'
+                  url={unvideos[playIndex1]?.url}
+                  width='45%'
+                  height='1%'
+                  playing={true}
+                  muted={true}
+                  light={false}
+                  pip={true}
+                  loop={true}
+                />
+ 
+          {unvideos.map((video, index) => {
+            if (video.id === 1) {
+              return (
+                <div className='The-Lost-Legacy' id={video.id}>
+                  <div className='The-Lost-Legacy-text'>
+                    <img src={unpeole} alt='' />
+                    <div className='text-text'>
+                      <h2>{video.content2}</h2>
+                      <p>
+                        <span className='text-span'>첫 등장</span>
+                        {video.content3}
+                      </p>
+                      <p>
+                        <span className='text-span'>마지막 등장</span>
+                        {video.content4}
+                      </p>
+                      <p>{video.content5}</p>
+                      <p>{video.content6}</p>
+                    </div>
+                  </div>
+
+                  <div className='dsdsdsd'>
+                    <div className='ds-text'>
+                      <h2>{video.content7}</h2>
+                      <p>
+                        <span className='text-span'>첫/마지막 출연-</span>
+                        {video.content8}
+                      </p>
+                      <p>{video.content9}</p>
+                    </div>
+                    <img src={unpeole1} alt='' />
+                  </div>
+                </div>
+              );
+            } 
+          })}
+
+
+            
+              
+
+                <FontAwesomeIcon
+                  className='unicon'
+                  icon={faXmark}
+                  onClick={unModalClose}
+                />
+              </div>
+            )}
+          </div>
+        )}
+
+
+
+
+   
             
         </div>
     </>

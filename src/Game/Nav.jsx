@@ -208,26 +208,49 @@ const [uncharted, setUncharted] = useState([
 const [unchVideo, setUnchvideo] = useState();
 
 
-const [unvideos, setUnVideds] = useState([
-  {
-    url: unchvideo, 
-    id:1,
-    content2:'클로에 프레이저',
-    content3:' - UNCHARTED 2: 황금도와 사라진 함대',
-    content4:' - UNCHARTED 3: 황금 사막의 아틀란티스',
-    content5:'시리즈에서 가장 인기 많은 캐릭터 중 하나인 클로에는 네이선 드레이크와 비견되는 대응 능력, 고고학 지식, 그리고 즉흥적인 성격을 가진 악명 높은 보물 사냥꾼입니다. 그녀는 전투와 운전 실력이 둘 다 뛰어난 것으로 유명합니다.',
-    content6:'클로에는 충동적이고 즉흥적이며, 기지를 최대로 발휘합니다. 그녀의 방식은 종종 도덕적인 선을 흐리지만 항상 결과를 내기 때문에 그녀를 찾는 이가 많습니다. 하지만 그녀에게도 한계는 있으며, 예상 밖의 상황이 펼쳐지면 주저하지 않고 피해를 막습니다.',
-    content7: '나딘 로스',
-    content8: 'UNCHARTED 4: 해적왕과 최후의 보물',
-    content9: '시리즈에서 등장한 지 얼마 되지 않았지만, 금세 그녀만의 팬층을 확보한 캐릭터입니다. 나딘은 무기를 다루는 전문가로, 그녀의 부하들이 운영하는 군사 회사인 쉐도우 마트에서 일합니다. 나딘은 매우 뛰어난 전투 능력과 지적 수완을 지니고 있으며, 항상 일관성 있는 인물로 그녀의 행동이 항상 목적에 맞게 이루어집니다.'
-    },
-    
+// |이 코드는 useState 훅을 사용하여 배열을 선언하고 초기값을 설정하는 부분입니다. 이 배열은 비디오와 관련된 정보를 담고 있습니다.
+// |
+// |좋은 점:
+// |- useState 훅을 사용하여 상태를 관리하고 있어서 코드가 간결합니다.
+// |- 배열 안에 객체를 담아서 비디오와 관련된 여러 정보를 한 번에 관리할 수 있습니다.
+// |
+// |나쁜 점:
+// |- 배열 안에 있는 객체들의 구조가 일관성이 없습니다. 첫 번째 객체는 url, content2, content3, content4, content5, content6, content7, content8, content9라는 여러 속성을 가지고 있지만, 두 번째 객체는 url 속성만 가지고 있습니다. 이렇게 구조가 일관성이 없으면 코드를 이해하기 어려울 수 있습니다.
+// |- 객체 안에 있는 속성 이름이 의미를 명확하게 전달하지 못합니다. 예를 들어, content2, content3, content4와 같은 속성 이름은 어떤 내용을 담고 있는지 알기 어렵습니다. 이런 경우에는 더 명확한 이름을 사용하는 것이 좋습니다.
+// |
+  const[unvideos, setUnVideds] = useState([
     {
-     id:2, 
-     url: unchvideo1, 
-     
+      id: 1,
+      url: unchvideo,
+      src : unpeole,
+      src1 : unpeole1,
+      content2: '클로에 프레이저',
+      content3: ' - UNCHARTED 2: 황금도와 사라진 함대',
+      content4: ' - UNCHARTED 3: 황금 사막의 아틀란티스',
+      content5: '시리즈에서 가장 인기 많은 캐릭터 중 하나인 클로에는 네이선 드레이크와 비견되는 대응 능력, 고고학 지식, 그리고 즉흥적인 성격을 가진 악명 높은 보물 사냥꾼입니다. 그녀는 전투와 운전 실력이 둘 다 뛰어난 것으로 유명합니다.',
+      content6: '클로에는 충동적이고 즉흥적이며, 기지를 최대로 발휘합니다. 그녀의 방식은 종종 도덕적인 선을 흐리지만 항상 결과를 내기 때문에 그녀를 찾는 이가 많습니다. 하지만 그녀에게도 한계는 있으며, 예상 밖의 상황이 펼쳐지면 주저하지 않고 피해를 막습니다.',
+      content7: '나딘 로스',
+      content8: 'UNCHARTED 4: 해적왕과 최후의 보물',
+      content9: '시리즈에서 등장한 지 얼마 되지 않았지만, 금세 그녀만의 팬층을 확보한 캐릭터입니다. 나딘은 무기를 다루는 전문가로, 그녀의 부하들이 운영하는 군사 회사인 쉐도우 마트에서 일합니다. 나딘은 매우 뛰어난 전투 능력과 지적 수완을 지니고 있으며, 항상 일관성 있는 인물로 그녀의 행동이 항상 목적에 맞게 이루어집니다.'
     },
-])
+    {
+      id: 2,
+      url: unchvideo1,
+    }
+  ]); 
+
+  const handleUnvideosChange = (newUnvideos) => {
+    setUnVideds(newUnvideos);
+  }
+
+  const newUnvideos = [...unvideos];
+
+newUnvideos[1].content2 = 'adadadadadad';
+newUnvideos[1].content3 = ' gkgkgkgkgkgkgkgk';
+newUnvideos[1].content4 = ' gkgkggsdgsdgsdgsdgkgkgkgkgkgk';
+
+
+
 
 const [unchModalOpen, setUnchModalOpen] = useState({});
 const [playIndex1, setPlayIndex1] = useState(0);
@@ -462,12 +485,12 @@ const unModalClose = () => {
                   loop={true}
                 />
  
-          {unvideos.map((video, index) => {
+          {newUnvideos.map((video, index) => {
             if (video.id === 1) {
               return (
                 <div className='The-Lost-Legacy' id={video.id}>
                   <div className='The-Lost-Legacy-text'>
-                    <img src={unpeole} alt='' />
+                    <img src={video.src} alt='' />
                     <div className='text-text'>
                       <h2>{video.content2}</h2>
                       <p>
@@ -492,26 +515,22 @@ const unModalClose = () => {
                       </p>
                       <p>{video.content9}</p>
                     </div>
-                    <img src={unpeole1} alt='' />
+                    <img src={video.src1} alt='' />
                   </div>
                 </div>
               );
-            } 
-          })}
-
-
-            
-              
-
-                <FontAwesomeIcon
-                  className='unicon'
-                  icon={faXmark}
-                  onClick={unModalClose}
-                />
-              </div>
-            )}
-          </div>
-        )}
+            } console.log(video)
+          })} 
+          
+          <FontAwesomeIcon
+          className='unicon'
+          icon={faXmark}
+          onClick={unModalClose}
+          />
+        </div>
+       )}
+    </div>
+    )}
 
 
 

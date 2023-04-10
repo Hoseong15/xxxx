@@ -520,10 +520,10 @@
   width: 100%;
   display: flex;
   justify-content: space-between; 
+  position: relative;
 }
 
 .unch-item {
-  position: relative;
   width: 25%;
   height: 550px;
   padding: 10px;
@@ -539,17 +539,30 @@
 
 .unch-btn{
   position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translate(-50%);
+  top:530px;
+  left: 12%;
   border: none;
   border-radius: 15px;
   padding: 10px;
+  width: 100px;
+  height: 55px;
 }
 
 .unch-btn:hover{
   border: 3px solid #000;
   box-shadow: 0 0 0 3px #fff;
+}
+
+.unch-btn1{
+  position: absolute;
+  left: 50%;
+  top: 81%;
+  transform: translate(-50%);
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100px;
+  height: 55px;
 }
 
 
@@ -612,4 +625,10 @@
 .dsdsdsd img{
   width: 50%;
   height: 100%;
+}
+
+
+.unch1-video{
+  width: 300px;
+  height: 200px;
 }

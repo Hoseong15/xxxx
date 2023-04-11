@@ -7,7 +7,7 @@
   width: 100%;
   height: 1000px;
   justify-content: center;
-  background-color: #0070D1;
+  background-color: rgba(18, 19, 20 );
 }
 .game-wrapper button {
   background: none;
@@ -28,14 +28,19 @@
   justify-content: space-between;
   flex-direction: column;
   border: 3px solid black;
+  border-radius: 15px;
   margin: 0 auto;
   margin-top: 140px;
   margin-left: 80px;
   background: linear-gradient(rgba(23 24 26/1), rgba(31 32 36/1));
+  transition: transform 500ms ease-in-out;
+  opacity: .7;
 }
 
 .game-btn:hover {
-  box-shadow: 1px 1px 1px 3px #fff;
+  box-shadow: 0 0 0 3px #aaa;
+  transform: translateY(-15px);
+  opacity: 1;
   
 }
 
@@ -79,9 +84,10 @@
   left: 5%;
   transform: translate(-5%,-95%);
   color: #000;
-  padding: 7px;
+  padding: 10px;
+  font-size: 13px;
   border: none;
-  border-radius: 15px;
+  border-radius: 20px;
   background-color: #fff;
   transition: all 300ms ease-in-out;
 }
@@ -93,13 +99,14 @@
 .game-btn-text3{
   position: absolute;
   top: 97%;
-  left: 40%;
+  left: 35%;
   transform: translate(-30%,-95%);
-  color: #000;
-  padding: 7px;
+  color: #fff;
+  padding: 10px;
+  font-size: 13px;
   border: none;
-  border-radius: 15px;
-  background-color: #aaa;
+  border-radius: 20px;
+  background-color: #7f7c7c;
   transition: all 300ms ease-in-out;
 }
 
@@ -204,13 +211,12 @@
 }
 
 .hide-img{
-  width: 15%;
-  height: 350px;
+  width: 19%;
+  height: 370px;
   margin-top: 30px;
   margin-bottom: 50px;
   object-fit: cover;
   border-radius: 30px; 
-  transition: all 300ms ease-in-out;
   border: 5px solid transparent;
 }
 
@@ -221,7 +227,8 @@
 .hide-pre{
   margin-left: 40px;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 30px;
+  padding: 5px;
   border: 5px solid transparent;
   border-radius: 50%;
   background-color: transparent;
@@ -236,7 +243,8 @@
 .hide-nex{ 
   cursor: pointer;
   margin-right: 40px;
-  font-size: 25px;
+  font-size: 30px;
+  padding: 5px;
   border: 5px solid transparent;
   border-radius: 50%;
   background-color: transparent;

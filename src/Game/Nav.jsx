@@ -83,11 +83,10 @@ function Nav() {
 
 
   const [imageList, setImageList] = useState([
-    { src: img, id: 0, content:'God of War Ragnarok', content1:'sdsdsd', content2 :'자세히 보기', content3: '초보자가이드' },
-    { src: img1,id: 1, content:'라스트 오브 어스', content1:'sdsdsd', content2 :'자세히 보기', content3: '초보자가이드' },
+    { src: img, id: 0, content:'God of War Ragnarok', content1:'크레토스와 아트레우스가 집착과 수용 사이에서 고민하는 동안, 극적이고 진심어린 여정을 경험하세요.', content2 :'자세히 보기', content3: '초보자가이드' },
+    { src: img1,id: 1, content:'라스트 오브 어스', content1:'The Last of Us 시리즈로 조엘과 엘리의 생존을 위한 여정을 직접 경험하세요.', content2 :'자세히 보기', content3: '초보자가이드' },
     { src: img2,id: 2, content:'UNCHARTED 4: 해적왕과 최후의 보물', content1:'네이선 드레이크를 플레이하여 과거를 마주하고 자신의 유산을 만들어 가는 것을 확인하세요.', content2 :'자세히 보기', content3: '초보자가이드' },
   ]);
-
 
   function handleIconClick(direction) {
     if (direction === 'prev') {
@@ -102,7 +101,6 @@ function Nav() {
       setImageList([...imageList]);
     }
   }
-
 
   // game detail 이미지 변경 //
 
@@ -268,7 +266,7 @@ function Nav() {
                   <img className='game-img' src={item.src} alt="" onClick={() =>handleClick(item.id)} />
                   <h4 className='game-btn-text'>{item.content}</h4>
                   <p className='game-btn-text1'>{item.content1}</p>
-                  <div className='game-btn-text2'>{item.content2}</div>
+                  <div className='game-btn-text2' onClick={() =>handleClick(item.id)}>{item.content2}</div>
                   <div className='game-btn-text3'>{item.content3}</div>
                 </div>
               ))}

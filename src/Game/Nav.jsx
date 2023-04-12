@@ -185,9 +185,9 @@ function Nav() {
 
   const [lastImg, setLastImg] = useState([
     { src: meta, content: '' },
-    { src: joel, id: 0, content: '조엘과 엘리가 이어가는 우정에 있습니다. 이것은 사랑, 충실함, 그리고 구원의 이야기' },
-    { src: ally, id: 0, content: ''},
-    { src: tommy, id: 0, content: '' },
+    { src: joel, id: 1, content: '조엘과 엘리가 이어가는 우정에 있습니다. 이것은 사랑, 충실함, 그리고 구원의 이야기' },
+    { src: ally, id: 1, content: '2033년, 2013년에 정체불명의 곰팡이가 퍼져 전체 인류의 60% 이상이 감염되어 괴생명체가 되어 버린 미래.'},
+    { src: tommy, id: 1, content: '' },
   ]);
   const [lastImg1, setLastImg1] = useState(false);
 

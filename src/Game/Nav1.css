@@ -525,6 +525,11 @@
   height: 100%;
   border: none;
   border-radius: 15px;
+  opacity: .6;
+  transition: all 200ms ease-in-out;
+}
+.back img:active {
+  opacity: 1;
 }
 
 .back p {

@@ -8,6 +8,8 @@
   height: 1000px;
   justify-content: center;
   background-color: rgba(18, 19, 20 );
+  transition: all 300ms ease-in-out;
+  margin-top: 130px;
 }
 .game-wrapper button {
   background: none;
@@ -66,6 +68,7 @@
   color: #fff;
   font-style: italic;
   font-size: 20px;
+
 }
 
 .game-btn-text1{
@@ -107,13 +110,14 @@
   border: none;
   border-radius: 20px;
   background-color: #7f7c7c;
-  transition: all 300ms ease-in-out;
+
 }
 
 .game-btn-text3:hover {
   border: 2px solid black;
   box-shadow: 0 0 0 3px #aaa;
 }
+
 
 .icon-wrapper {
   display: flex;
@@ -151,6 +155,7 @@
   background: #232526;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-top: 168px;
 }
 
 .react-player video {
@@ -182,7 +187,7 @@
 }
 
 .video-text h1 {
-  margin-top: 100px;
+  margin-top: 270px;
   margin-bottom: 10px;
   font-size: 40px;
 }
@@ -345,7 +350,6 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: start;
 }
 
 .hide-game-text img {
@@ -413,8 +417,6 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100%;
-  /* margin-top: 100px; */
-
 }
 .last-bg img {
   width: 100%;
@@ -479,13 +481,13 @@
 }
 
 .last-card{
-  width: 200px;
-  height: 250px;
+  width: 220px;
+  height: 270px;
   perspective: 1100px;
   margin: 0 50px 50px 50px;
 }
 
-.card{
+.pscard{
   width: 100%;
   height: 100%;
   position: relative;
@@ -493,7 +495,7 @@
   transform-style: preserve-3d;
 }
 
-.front, .back {
+.psfront, .psback {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -502,61 +504,55 @@
   border-radius: 15px;
 }
 
-.front {
+.psfront {
   background-image: url(./라스트오브어스\ 로고.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.back {
+.psback {
   transform: rotateY(180deg);
 }
 
-.back:active {
-  border: 1px solid #0070D1;
-  scale: 1.1;
-  transition: all 500ms ease-in-out;
-  margin-left: 40px;
-}
-
-.back img{
+.psback img{
   width: 100%;
   height: 100%;
   border: none;
   border-radius: 15px;
-  opacity: .6;
+  opacity: .4;
   transition: all 200ms ease-in-out;
 }
-.back img:active {
+.psback :active {
   opacity: 1;
+  transition: all 800ms ease-in-out;
 }
 
-.back p {
+.psback p {
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -45%);
   width: 100%;
   color: #fff;
-  z-index: 1;
-  opacity: 1;
   font-weight: 700;
 }
 
-.last-card:hover .card {transform: rotateY(180deg) scale(1.4);}
+.last-card:hover .pscard {transform: rotateY(180deg) scale(1.4);}
 
-.front{
+.psfront{
   line-height: 250px;
   color: #fff;
   font-weight: 700;
-  font-style: italic;
   font-size: 40px;
 }
 
 .opacity7 {
-  opacity: 0.7;
+  opacity: 1;
+  scale: 1.1;
+  transition: all 500ms ease-in-out;
 }
+
 
 .unch-main{
   position: relative;
@@ -611,7 +607,6 @@
   height: 550px;
   padding: 10px;
   margin: 50px;
-  /* background-color:  #1F1F1F; */
   background-image: url(./131313131311.webp);
   background-position: center;
   background-repeat: no-repeat;

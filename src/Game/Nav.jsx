@@ -185,9 +185,9 @@ function Nav() {
 
   const [lastImg, setLastImg] = useState([
     { src: meta, content: '' },
-    { src: joel, id: 1, content: '조엘과 엘리가 이어가는 우정에 있습니다. 이것은 사랑, 충실함, 그리고 구원의 이야기' },
-    { src: ally, id: 1, content: '2033년, 2013년에 정체불명의 곰팡이가 퍼져 전체 인류의 60% 이상이 감염되어 괴생명체가 되어 버린 미래.'},
-    { src: tommy, id: 1, content: '' },
+    { src: joel, id: 1, content: '시민 케인처럼, 유례없이 뛰어난 작품이다.' },
+    { src: ally, id: 1, content: '2033년 정체불명의 곰팡이가 퍼져 전체 인류의 60% 이상이 감염되어 괴생명체가 되어 버린 미래.'},
+    { src: tommy, id: 1, content: '조엘과 엘리가 이어가는 우정에 있습니다. 이것은 사랑, 충실함, 그리고 구원의 이야기' },
   ]);
   const [lastImg1, setLastImg1] = useState(false);
 
@@ -359,7 +359,6 @@ function Nav() {
         <section className='hide-game-detail'>
           <div className='hide-game-wapper'>
             <img className='hide-game-img' src={godText[currentGodIndex].src} alt="" />
-
             <div className='hide-game-text'>
               <h1 className='text-main'>{godText[currentGodIndex].text}</h1>
               <FontAwesomeIcon className='faxMark' icon={faXmark} onClick={modalClose} />
@@ -398,9 +397,9 @@ function Nav() {
         <div className='last-card-warpper'>
           {lastImg.map((item, index) => (
             <div className='last-card' key={index}>
-              <div className='card'>
-                <div className='front'></div>
-                <div className={`back ${item.id === 0 ? 'opacity7' : ''}`}>
+              <div className='pscard'>
+                <div className='psfront'></div>
+                <div className={`psback ${item.id === 0 ? 'opacity7' : ''}`}>
                   <img src={item.src} alt='unimage' />
                   <p>{item.content}</p>
                 </div>
@@ -409,7 +408,6 @@ function Nav() {
           ))}
         </div>
       </div>
-
 
 
       <div className='uncharted'>

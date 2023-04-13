@@ -27,6 +27,10 @@ import unch1 from './언챠1.webp'
 import ungame2 from './언챠게임1.webp'
 import ungame3 from './언챠게임2.webp'
 import ungame4 from './언챠게임3.webp'
+import moodal from './나타.webp'
+import modal1 from './짭.webp'
+import modal2 from './네이션.webp'
+import modal3 from './sam drake.webp'
 
 function Nav() {
 
@@ -248,6 +252,49 @@ function Nav() {
     return () => clearInterval(interval);
   }, [fullText]);
 
+
+
+  const [unchartedModal, setunchartedModal] = useState([
+    { text: '클로에 프레이저', 
+    src: moodal, 
+    id: 0, 
+    content: '첫 등장- UNCHARTED 2: 황금도와 사라진 함대',
+    content1 : '시리즈에서 가장 인기 많은 캐릭터 중 하나인 클로에는 네이선 드레이크와 비견되는 대응 능력, 고고학 지식, 그리고 즉흥적인 성격을 가진 악명 높은 보물 사냥꾼입니다.'
+  },
+    { text1: '나딘 로스', 
+    src: modal1, id: 1, 
+    content3: '첫/마지막 출연- UNCHARTED 4: 해적왕과 최후의 보물',
+    content4: '나딘은 UNCHARTED 4의 악당인 레이프 애들러가 고용한 남아프리카공화국 무장 용병 조직인 쇼어라인의 리더였습니다. 쇼어라인 해체 후, 나딘은 프리 에이전트 겸 용병이 되었습니다.'
+  },
+  ]);
+
+  const [UnchartedmodalOpen, setUnchartedModalOpen] = useState(false);
+
+  const [openUncharted, setOpenUncharted] = useState(true)
+
+  const unchartedmodalClose = () => {
+    setUnchartedModalOpen (false);
+    setOpenUncharted(true)
+  }
+
+  const unchartedOpenModal = () => {
+    setUnchartedModalOpen(true)
+    setOpenUncharted(false)
+  }
+
+  const [UnchartedmodalOpen1, setUnchartedModalOpen1] = useState(false);
+  const [openUncharted1, setOpenUncharted1] = useState(true);
+
+  const closeUncharted2 = () => {
+    setUnchartedModalOpen1(false)
+    setOpenUncharted1(true)
+  }
+
+  const openUncharted2 = () => {
+    setUnchartedModalOpen1(true)
+    setOpenUncharted1(false)
+  }
+
   ////////////////////////////////////////////////////////////////////
 
 
@@ -425,14 +472,71 @@ function Nav() {
                     <img src={item.src} alt="" />
                     <h4>{item.content}</h4>
                     <p>{item.content1}</p>
-                    <button className='unch-btn'>{item.content2}</button>
                   </div>
                 ))}
+                <button className='unch-btn2'>자세히보기</button>
+                <button onClick={unchartedOpenModal} className='unch-btn'>자세히보기</button>
+                <button onClick={openUncharted2} className='unch-btn1'>자세히보기</button>
+                <button className='unch-btn3'>자세히보기</button>
               </div>
             </div>
 
           </div>
         </div>
+
+
+       {UnchartedmodalOpen && (
+          <div className='unch-modal'  onClick={unchartedmodalClose}>
+            <div className='unch-modalbox'>
+              {unchartedModal.map((item, i) => (
+                <div className='nata'>
+                  <img src={item.src} alt="" />
+                  <div className='modal-text'>
+                    <h3>{item.text}</h3>
+                    <p>{item.content}</p>
+                    <p>{item.content1}</p>
+                    <p>{item.content2}</p>
+                  </div>
+
+                  <div className='dsd'>
+                    <div className='naden-text'>
+                      <h3>{item.text1}</h3>
+                      <p>{item.content3}</p>
+                      <p>{item.content4}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}    
+
+        {UnchartedmodalOpen1 && (
+          <div className='un-second-modal' onClick={closeUncharted2}>
+            <div className='second-modal-box'>
+              <div className='nathan'>
+                <img src={modal2} alt="" />
+                <div className='nathan-text'>
+                  <h1>네이선 드레이크</h1>
+                  <p>모험과 수수께끼를 즐기기로 유명한 네이선 드레이크는 항상 모험, 부, 그리고 영광의 약속을 무시하지 못하는 타고난 탐험가입니다.</p>
+                  <p>자신의 안위도 신경 쓰지 않고 근심 걱정 없이 세상에 접근하는 태도와는 달리 훨씬 복잡한 과거가 있는 사람이지만, 그는 어떤 난관이 앞을 가로막아도 거뜬히 큰일을 해치울 수 있는 모험가입니다.</p>
+                  <p>UNCHARTED 4: 해적왕과 최후의 보물, UNCHARTED 3: 황금사막의 아틀란티스</p>
+                </div>
+              </div>
+
+              <div className='aleana'>
+                <img src={modal3} alt="" />
+                <div className='aleana-text'>
+                  <h1>엘레나 피셔</h1>
+                  <p>처음 엘리나 피셔 기자를 만날 때 그녀는 네이선과 설리의 와일드한 모험에 의도치 않게 참가합니다.</p>
+                  <p>삶의 균형을 중시하는 하는 엘레나는 네이선의 충동적인 행동과 충돌할 때도 많지만, 엘레나는 뛰어난 전략가이자, 보통 동료 중 유일하게 이성적으로 생각하는 인물이기도 합니다.</p>
+                  <p>UNCHARTED 4: 해적왕과 최후의 보물, UNCHARTED 3: 황금사막의 아틀란티스</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}       
+        
       </div>
       
 

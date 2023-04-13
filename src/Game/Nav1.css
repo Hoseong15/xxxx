@@ -623,9 +623,9 @@
 
 .unch-btn{
   position: absolute;
-  top:95%;
-  left: 50%;
-  transform: translate(-50%,-95%);
+  top: 85%;
+  left: 37%;
+  transform: translate(-37%,-85%);
   border: none;
   border-radius: 15px;
   width: 90px;
@@ -633,7 +633,185 @@
   margin-top: 10px;
 }
 
-.unch-btn:hover{
+.unch-btn:hover,
+.unch-btn1:hover,
+.unch-btn2:hover,
+.unch-btn3:hover{
   border: 3px solid #000;
   box-shadow: 0 0 0 3px #fff;
+}
+
+.unch-btn1 {
+  position: absolute;
+  top: 85%;
+  left: 63%;
+  transform: translate(-63%,-85%);
+  border: none;
+  border-radius: 15px;
+  width: 90px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.unch-btn2{
+  position: absolute;
+  top: 85%;
+  left: 9%;
+  transform: translate(-9%,-85%);
+  border: none;
+  border-radius: 15px;
+  width: 90px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.unch-btn3{
+  position: absolute;
+  top: 85%;
+  left: 90%;
+  transform: translate(-90%,-85%);
+  border: none;
+  border-radius: 15px;
+  width: 90px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+
+
+.unch-modal{
+  position: fixed;
+  top: 0;  
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.unch-modalbox{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(./언챠티드\ 백백백.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 650px;
+  height: 650px;
+}
+
+.nata {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  display: flex;
+}
+.nata img{
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(0,-50%);
+  width: 45%;
+  height: 90%;
+}
+
+.modal-text{
+  position: absolute;
+  top: 5%;
+  right: 10px;
+  transform: translate(0,-5%);
+  color: #fff;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.naden-text{
+  position: absolute;
+  top: 5%;
+  right: 10px;
+  transform: translate(0,-5%);
+  color: #fff;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.un-second-modal{
+  position: fixed;
+  top: 0;  
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.second-modal-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(32, 34, 37);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 10px;
+  width: 750px;
+  height: 650px;
+  padding: 6px;
+}
+
+.nathan{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.nathan img{
+  width: 100%;
+  height: 50%;
+  padding: 6px;
+  border: none;
+  border-radius: 25px;
+}
+
+.nathan-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.aleana{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+.aleana img{
+  width: 100%;
+  height: 38%;
+  padding: 6px;
+  border: none;
+  border-radius: 25px;
+  margin-top: -23px;
+}
+
+.aleana-text{
+  display: flex;
+  flex-direction: column;
 }

@@ -303,10 +303,10 @@ function Nav() {
       <section className='game-ck'>
         {!showVideo ? (
           <div className='game-wrapper'>
-            <button onClick={() => handleIconClick('prev')}>
+            {/* <button onClick={() => handleIconClick('prev')}>
               <i className='icon-prev' />
               <span className="sr-only">Previous</span>
-            </button>
+            </button> */}
 
               {imageList.map((item) => (
                 <div  className='game-btn'>
@@ -318,12 +318,12 @@ function Nav() {
                 </div>
               ))}
 
-            <div className='icon-wrapper'>
+            {/* <div className='icon-wrapper'>
               <button onClick={() => handleIconClick('next')}>
                 <i className='icon-next' />
                 <span className="sr-only">Next</span>
               </button>
-            </div>
+            </div> */}
 
           </div>
         ) : (
@@ -470,8 +470,8 @@ function Nav() {
                 {uncharted.map((item, index) => (
                   <div className='unch-item' key={index}>
                     <img src={item.src} alt="" />
-                    <h4>{item.content}</h4>
-                    <p>{item.content1}</p>
+                    <h4 className='unch-item-text'>{item.content}</h4>
+                    <p className='unch-p'>{item.content1}</p>
                   </div>
                 ))}
                 <button className='unch-btn2'>자세히보기</button>

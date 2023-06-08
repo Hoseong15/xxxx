@@ -412,7 +412,7 @@
 .last-bg{
   position: relative;
   width: 100%;
-  height: 900px;
+  height: 700px;
   background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3) ), url(./라스트오브어스\ 디테일\ 백그라운드.webp);
   background-position: center center;
   background-repeat: no-repeat;
@@ -557,19 +557,19 @@
 .unch-main{
   position: relative;
   width: 100%;
-  height: 800px;
+  height: 640px;
   background-image: url(./uncharted-hub-hero-banner-desktop-04-en-30jun21.webp);
   background-position: center;
   background-repeat: no-repeat;
-  background-size:contain;
-  margin-top: -84px;
+  background-size:cover;
+  /* margin-top: -4px; */
 }
 
 .unch-text{
   position: absolute;
-  top: 90%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%,-90%);
+  transform: translate(-50%,40%);
   width: 50%;
   height: 300px;
   background-image: url(./언챠티드\ 글.webp);
@@ -582,7 +582,7 @@
   width: 100%;
   height: 750px;
   background-image: url(./언챠.webp);
-  margin-top: -110px;
+  /* margin-top: -110px; */
 }
 
 .unch-text1{
@@ -814,4 +814,264 @@
 .aleana-text{
   display: flex;
   flex-direction: column;
+}
+
+@media (min-width: 1281px){
+
+   .game-btn-text1{
+    font-size: 14px;
+  } 
+   .game-img{
+    width: 100%;
+    margin-top: 10px;
+  }
+  .game-btn-text{
+    font-size: 16px;
+  }
+  .game-btn-text2{
+    font-size: 12px;
+  } 
+  .game-btn-text3{
+    top: 97%;
+    left: 50%;
+    transform: translate(-50%,-97%);
+    font-size: 12px;
+  }
+  .last-text{height: 100px;}
+  .last-text1,.last-text2,.last-text3{font-size: 14px;}
+  .unch-main{
+    background-size: cover;
+    height: 500px;
+  }
+  .unch-text{
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,35%);
+    width: 40%;
+    
+  }
+  .unch-item-text{
+    font-size: 16px;
+  }
+  .unch-p{
+    font-size: 13px;
+    padding: 5px;
+    margin-top: -6px;
+  }
+ 
+  
+}
+
+@media (max-width: 1280px){
+  .game-btn-text1{font-size: 14px;}
+  .game-img{
+    width: 95%;
+    margin-top: 10px;
+  }
+  .game-btn-text{font-size: 16px;}
+  .game-btn-text2{font-size: 12px;}
+  .game-btn-text3{
+    top: 97%;
+    left: 60%;
+    transform: translate(-60%,-97%);
+    font-size: 12px;
+  }
+  .react-player,.video-text{display: none;}
+  .kratos{width: 40%;}
+  .last-bg{height:680px;}
+  .last-text{height: 100px;}
+  .last-text1,.last-text2,.last-text3{font-size: 14px;}
+  
+  .unch-main{
+    height: 500px;
+    margin-top: -162px;
+    margin-bottom: -210px;
+  }
+  .unch-text{
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%,-90%);
+    height: 100px;
+  }
+  .unch-item{
+    width: 25%;
+    height: 500px;
+    padding: 10px;
+    margin-top: 150px;
+  }
+  .unch-item-text{
+    font-size: 14px;
+  }
+  .unch-p{
+    font-size: 13px;
+    padding: 5px;
+    margin-top: -6px;
+  }
+
+  .unch-btn1{
+    top: 90%;
+    left: 63%;
+    transform: translate(-63%,-90%);
+  }
+  .unch-btn2{
+    top: 90%;
+    left: 9%;
+    transform: translate(-9%,-90%);
+  }
+  .unch-btn3{
+    top: 90%;
+    left: 90%;
+    transform: translate(-90%,-90%);
+  }
+  .unch-btn{
+    top: 90%;
+    left: 37%;
+    transform: translate(-37%,-90%);
+  }
+
+}
+
+@media (max-width: 768px){
+  
+  .game-wrapper{height: 700px;}
+
+  .game-btn{
+    transform: translate(-5%,-5%);
+    margin-left: 20px;
+    margin-right: 0;
+    width: 45%;
+    height: 500px;
+  }
+  .game-img{height: 300px;}
+  .game-btn-text{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    font-size: 18px;
+  }
+  .game-btn-text1{top: 83%;}
+  .game-btn-text2,.game-btn-text3{padding:5px;}
+  .game-bg{height: 500px;}
+  .kratos{
+    width: 45%;
+    height: 70%;
+  }
+  .game-txt{
+    font-size: 25px;
+    left: 45%;
+  }
+  .game-pre,.game-next{
+    padding: 15px;
+  }
+  .hide-game-img{
+    width: 40%;
+    height: 65%;
+  }
+  .text-main{font-size: 40px;}
+  .faxMark{top: -100px;}
+  .text-sub{
+    margin-top: -10px;
+    font-size: 17px;
+  }
+  .hide-game-text img {
+    width: 85%;
+    height: 200px;
+    animation: fadeInRight 1s;
+  }
+
+  .modal-icon1{
+    right: 0px;
+  }
+
+  .last-bg{
+    height: 600px;
+    background-size: cover;
+  }
+
+  .last-text{
+    font-size: 14px;
+  }
+  .last-text1{
+    top: 47%;
+    font-size: 12px;
+  }
+  .last-text2{
+    top: 56%;
+    font-size: 12px;
+  }
+  .last-text3{
+    top: 77%;
+    font-size: 12px;
+  }
+  .last-card-warpper{
+    height: 400px;
+    margin-bottom: 150px;  
+  }
+
+  .last-card{
+    height: 250px;
+    margin: 0;
+  }
+
+
+  .last-card:hover .pscard {transform: rotateY(180deg) scale(1.2);}
+  
+ 
+  .psback :active {
+    opacity: 1;
+    transition: all 800ms ease-in-out;
+  }
+  
+  .psback p {
+    font-size: 12px;
+    
+  }
+  .unch-bg{
+    position: relative;
+  }
+  .unch-item{
+    top: 30px;
+    width: 20%;
+    height: 550px;
+    padding: 10px;
+    margin: 20px;
+  }  
+  
+  .unch-item img {
+    width: 100%;
+    height: 35%;
+    background-size: contain;
+  }
+  
+  .unch-p{
+    font-size: 12px;
+    padding: 0px;
+    margin-top: -10px;
+  }
+
+  .unch-btn1{
+    top: 98%;
+    left: 64%;
+    transform: translate(-64%,-98%);
+  }
+  .unch-btn2{
+    top: 98%;
+    left: 7%;
+    transform: translate(-7%,-98%);
+  }
+  .unch-btn3{
+    top: 98%;
+    left: 92%;
+    transform: translate(-92%,-98%);
+  }
+  .unch-btn{
+    top: 98%;
+    left: 36%;
+    transform: translate(-36%,-98%);
+  }
+
+  
+  
+
+
 }
